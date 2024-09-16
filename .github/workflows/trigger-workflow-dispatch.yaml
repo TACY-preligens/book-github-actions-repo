@@ -9,10 +9,16 @@ on:
         description: 'Nom de la seconde personne'
         required: false
         default: 'Anonymouse'
+      param3:
+        type: choice
+        description: 'Mode du message'
+        options:
+          - 'Urgent'
+          - 'Non urgent'
 
 
 jobs:
   input-message:
     runs-on: ubuntu-latest
     steps:
-      - run: "echo Dit bonjour à ${{ github.event.inputs.param1 }} et ${{ github.event.inputs.param2 }} !"
+      - run: "echo Dit bonjour à ${{ github.event.inputs.param1 }} et ${{ github.event.inputs.param2 }} ET c'est ${{ github.event.inputs.param3 }} et ce workflow a été exécuté par ${{ github.actor }}!"
