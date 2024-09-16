@@ -1,0 +1,10 @@
+name: Trigger by files change in src
+on:
+  push:
+    paths:
+      - 'src/**'
+jobs:
+  test-echo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello world"
